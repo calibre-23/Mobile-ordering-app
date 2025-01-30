@@ -21,3 +21,22 @@ h3{
     font-size: 22px;
     margin: 0;
 }
+/*render*/
+
+.btn{
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #669bbc;
+    border: 2px solid #669bbc;
+    width: 50px;
+    height: 50px;
+}
+
+.menu-item{
+    border-bottom: 1px solid  #219ebc;;
+    padding: 20px 0 0 0;
+    width: 100%;
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-between;
+}

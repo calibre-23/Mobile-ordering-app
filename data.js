@@ -21,5 +21,4 @@ const menuArray = [
         id: 2
     }
 ]
-
 export default menuArray;
