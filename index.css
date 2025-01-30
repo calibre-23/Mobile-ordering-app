@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    
+} 
+.header {
+    background-image: url("images/vb1.jpg");
+    padding: 20px;
+    width:  auto;
+    height: 167px;
+    font-family: "acme";
+    color: #669bbc;
+    background-size: cover;
+    text-shadow: 3px 2px 2px black;
+    font-size: 39px;
+}
+h1{
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+h3{
+    font-size: 22px;
+    margin: 0;
+}
