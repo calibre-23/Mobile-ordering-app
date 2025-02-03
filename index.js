@@ -49,7 +49,6 @@ function getBasketHtml(){
         </div>`
     }
     basket.forEach((basketItems)=>{
-        if(basketItems.length<1){
         basketHtml +=`<div class="order-item2">
         <h3 class="order-name">${basketItems.name}</h3>
         <button class="order-btn" data-remove="${basketItems.name}">remove</button>
@@ -59,8 +58,6 @@ function getBasketHtml(){
         <div class="total">
         <h3 class="order-total">total: </h3>
         </div>`
-        }
-       
     })
     return basketHtml
 }
