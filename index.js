@@ -67,17 +67,18 @@ function getBasketHtml(){
     }
     basket.forEach((basketItems)=>{
         basketHtml +=`<div class="order-item2">
-        <h3 class="order-name">${basketItems.name}</h3>
-        <button class="order-btn" data-remove="${basketItems.name}">remove</button>
-        <p class="order-price">${basketItems.price}</p>
+        <h3 class="order-name">${basketItems.name} <button class="order-btn" data-remove="${basketItems.name}">remove</button></h3>
+        <p class="order-price">£${basketItems.price}</p>
         </div>`
     })
     let totalHtml=""
     if(basket.length >0){
         totalHtml +=`<div class="total1">
         <h3 class="total-price1">Total: £${totalCost()}</h3>
-        </div>`
-      }
+        </div>
+        <div>
+        <button class="complete-order">Complete Order</button></div>`
+    }
     
 
     return basketHtml + totalHtml;

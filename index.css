@@ -31,6 +31,7 @@ h3{
     justify-content: space-around;
     color: #1a1919;
     font-size: 25px;
+    margin: 0px 25px 0px 25px;
 }
 
 .name{
@@ -73,13 +74,12 @@ h3{
 .order-item{
     display: flex;
     justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 25px 0px 25px 0px;
 }
 
 .order-item2{
     display: flex;
-    justify-content: center;
+    justify-content: space-between
     
 }
 
@@ -89,10 +89,28 @@ h3{
     
 }
 
-.total{
-    display: none;
+.total1{
+    margin: 0px 25px 0px 25px;
+    display: flex;
+    justify-content: flex-start;
+    border-top: 1px solid grey;
 }
 
-.totalItems{
+.order-price{
+    margin: 0px 25px 0px 25px;
     display: flex;
+    justify-content: flex-end;
+   
 }
+
+.order-btn{
+    background-color: white;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    color: grey;
+   
+}
+button:hover{
+    cursor: pointer;
+} 
