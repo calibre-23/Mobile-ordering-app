@@ -88,3 +88,11 @@ h3{
     border: 0px 
     
 }
+
+.total{
+    display: none;
+}
+
+.totalItems{
+    display: flex;
+}

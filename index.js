@@ -8,7 +8,8 @@ document.addEventListener('click', (event)=>{
         const itemName=event.target.dataset.add;
         addMenuItemToBasket(itemName)
         console.log(basket)
-    }})
+    }
+})
 
 function addMenuItemToBasket(itemName){
     const  targetMenuObj=menuArray.find((menuItem)=>menuItem.name===itemName)
@@ -18,7 +19,7 @@ function addMenuItemToBasket(itemName){
         console.error(`Could not find menu item with name ${itemName}`)
     }
     render();
-
+    totalCost()
 }
 
 
@@ -53,21 +54,32 @@ function getBasketHtml(){
         <h3 class="order-name">${basketItems.name}</h3>
         <button class="order-btn" data-remove="${basketItems.name}">remove</button>
         <p class="order-price">${basketItems.price}</p>
-        <button class="order-btn" data-remove="${basketItems.name}">-</button>
-        </div>
-        <div class="total">
-        <h3 class="order-total">total: </h3>
         </div>`
     })
-    return basketHtml
+    let totalHtml=""
+    if(basket.length >0){
+        totalHtml +=`<div class="total1">
+        <h3 class="total-price1">Total: £${totalCost()}</h3>
+        </div>`
+      }
+    
+
+    return basketHtml + totalHtml;
+    
 }
 
+function totalCost(){
+    let total=0;
+    basket.forEach((basketItems)=>{
+        total += basketItems.price
+    })
+    return total
+}
 
 function render(){
     document.getElementById('menu').innerHTML=getMenuHtml()
     document.getElementById('order').innerHTML= getBasketHtml()
-    
-    
+ 
 }
 
 
