@@ -9,7 +9,14 @@ document.addEventListener('click', (event)=>{
         addMenuItemToBasket(itemName)
         console.log(basket)
     }
+    else if(event.target.dataset.remove){
+        console.log(event.target.dataset.remove)
+        const itemName=event.target.dataset.remove;
+        removeMenuItemFromBasket(itemName)
+        console.log(basket)
+    }
 })
+
 
 function addMenuItemToBasket(itemName){
     const  targetMenuObj=menuArray.find((menuItem)=>menuItem.name===itemName)
@@ -22,7 +29,16 @@ function addMenuItemToBasket(itemName){
     totalCost()
 }
 
-
+function removeMenuItemFromBasket(itemName){
+    const itemIndex=basket.findIndex((basketItem)=>basketItem.name===itemName)
+    if(itemIndex!== -1){
+        basket.splice(itemIndex,1)
+    }else{
+        console.error(`Could not find menu item with name ${itemName}`)
+    }
+    render();
+    totalCost()
+    }
 
 
 function getMenuHtml(){
