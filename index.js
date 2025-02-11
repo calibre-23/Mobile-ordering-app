@@ -25,10 +25,15 @@ document.addEventListener('click', (event)=>{
 
 logInForm.addEventListener('submit', (event)=>{
     event.preventDefault();
-    orderConfirmation()
-    render()
-    console.log(fullName)
-})
+    
+    // Define fullName here before logging it
+    const fullName = document.querySelector('input[name="fullName"]').value;
+    console.log(fullName);
+    
+    orderConfirmation(fullName); // Pass fullName as an argument
+    render();
+});
+
 
 
 function addMenuItemToBasket(itemName){
@@ -102,12 +107,21 @@ function displayModal(){
 
 }
 
-function orderConfirmation(){ 
-  const fullName=document.querySelector('input[name="fullName"]').value
-  document.getElementById('confirmation').innerHTML=`<p>Thank you ${fullName} for your order!</p>`
-  console.log(fullName)
-  render();
+function orderConfirmation(fullName){ 
+    console.log("Order Confirmation triggered!");  // Check if it's being called
+    document.getElementById('modal').style.display = 'none';
+    basket = [];
+
+    // Check if confirmation element exists before updating
+    const confirmationElement = document.getElementById('confirmation');
+    if (confirmationElement) {
+        confirmationElement.innerHTML = `<p>Thank you ${fullName} for your order!</p>`;
+    } else {
+        console.error("Error: Element with ID 'confirmation' not found.");
+    }
 }
+
+
 
 
 function totalCost(){

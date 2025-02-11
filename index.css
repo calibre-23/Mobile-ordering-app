@@ -170,3 +170,9 @@ input{
     border: 0px;
     color: white;
 }
+#confirmation {
+    display: block; /* Ensure it is displayed */
+    padding: 20px;
+    font-size: 18px;
+    color: green;
+}
