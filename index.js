@@ -1,4 +1,6 @@
 import   menuArray   from './data.js';
+const logInForm =document.getElementById('card-details')
+
 let basket = [];
 console.log(menuArray)
 
@@ -15,6 +17,17 @@ document.addEventListener('click', (event)=>{
         removeMenuItemFromBasket(itemName)
         console.log(basket)
     }
+    else if(event.target.classList.contains('complete-order')){
+        displayModal()
+        render()
+    }
+})
+
+logInForm.addEventListener('submit', (event)=>{
+    event.preventDefault();
+    orderConfirmation()
+    render()
+    console.log(fullName)
 })
 
 
@@ -84,6 +97,18 @@ function getBasketHtml(){
     return basketHtml + totalHtml;
     
 }
+function displayModal(){
+    document.getElementById('modal').style.display='block'
+
+}
+
+function orderConfirmation(){ 
+  const fullName=document.querySelector('input[name="fullName"]').value
+  document.getElementById('confirmation').innerHTML=`<p>Thank you ${fullName} for your order!</p>`
+  console.log(fullName)
+  render();
+}
+
 
 function totalCost(){
     let total=0;
@@ -96,7 +121,7 @@ function totalCost(){
 function render(){
     document.getElementById('menu').innerHTML=getMenuHtml()
     document.getElementById('order').innerHTML= getBasketHtml()
- 
+
 }
 
 
